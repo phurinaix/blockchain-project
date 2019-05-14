@@ -1,0 +1,9 @@
+.link a{
+    font-family: 'Neucha', cursive;
+    /* font-size: 0.8em; */
+    margin: 0 10px;
+    letter-spacing: 1px;
+}
+.social-contact {
+    display: flex;
+}
