@@ -28,7 +28,7 @@ class Request extends Component {
     };
     handleRequestSubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:5000/request', {
+        axios.post('https://still-badlands-79996.herokuapp.com/request', {
             studentName: this.state.studentName,
             studentId: this.state.studentId
           })
@@ -68,7 +68,7 @@ class Request extends Component {
     };
     handlePubKeySubmit = (event) => {
         event.preventDefault();
-        axios.post('http://localhost:5000/pubKey', {
+        axios.post('https://still-badlands-79996.herokuapp.com/pubKey', {
             pubKey: this.state.pubKey,
             diploma: this.state.diploma,
             transcript: this.state.transcript
