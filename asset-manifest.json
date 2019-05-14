@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/blockchain/static/css/main.37ccd69d.chunk.css",
+    "main.js": "/blockchain/static/js/main.b153e7f9.chunk.js",
+    "main.js.map": "/blockchain/static/js/main.b153e7f9.chunk.js.map",
+    "runtime~main.js": "/blockchain/static/js/runtime~main.07ddac04.js",
+    "runtime~main.js.map": "/blockchain/static/js/runtime~main.07ddac04.js.map",
+    "static/js/2.deee6eea.chunk.js": "/blockchain/static/js/2.deee6eea.chunk.js",
+    "static/js/2.deee6eea.chunk.js.map": "/blockchain/static/js/2.deee6eea.chunk.js.map",
+    "index.html": "/blockchain/index.html",
+    "precache-manifest.7db0d63a24a0256e846f41ea20983d3a.js": "/blockchain/precache-manifest.7db0d63a24a0256e846f41ea20983d3a.js",
+    "service-worker.js": "/blockchain/service-worker.js",
+    "static/css/main.37ccd69d.chunk.css.map": "/blockchain/static/css/main.37ccd69d.chunk.css.map"
+  }
+}
