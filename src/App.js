@@ -13,8 +13,8 @@ function App() {
       <Navigation />
       <Layout>
         <Switch>
-          <Route path="/blockchain" component={Home} exact/>
-          <Route path="/blockchain/request" component={Request}/>
+          <Route path="/blockchain-project" component={Home} exact/>
+          <Route path="/blockchain-project/request" component={Request}/>
           <Route component={Error}/>
         </Switch>
       </Layout>

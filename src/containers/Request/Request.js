@@ -81,7 +81,7 @@ class Request extends Component {
                     isPubKeySuccess: true
                 });
                 alert('Success');
-                this.props.history.push('/blockchain/');
+                this.props.history.push('/blockchain-project');
             } else if(res === 'err1') {
                 this.setState({
                     pubKeyInvalidText: 'Public Key Invalid'
