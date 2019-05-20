@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b85ce9efecbcf7b42370b91ca2faf00",
+    "revision": "b6fd8a671b889bf2b10033ff8c91d726",
     "url": "/blockchain-project/index.html"
   },
   {
-    "revision": "17945ba89f647c9c0bc8",
+    "revision": "a5ebb299072176d7ba5e",
     "url": "/blockchain-project/static/css/main.91490c47.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/blockchain-project/static/js/2.0cd2704c.chunk.js"
   },
   {
-    "revision": "17945ba89f647c9c0bc8",
-    "url": "/blockchain-project/static/js/main.e8701ac8.chunk.js"
+    "revision": "a5ebb299072176d7ba5e",
+    "url": "/blockchain-project/static/js/main.7f4b7602.chunk.js"
   },
   {
     "revision": "6c7ee7ad7c7db0c8bf26",
