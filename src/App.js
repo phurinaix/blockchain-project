@@ -6,6 +6,7 @@ import Request from './containers/Request/Request';
 import Error from './containers/Error/Error';
 import Navigation from './components/Navigation';
 import Layout from './components/Layout';
+import './App.css';
 
 function App() {
   return (

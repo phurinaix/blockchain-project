@@ -14,7 +14,9 @@ class Request extends Component {
         diploma: false,
         transcript: false,
         pubKeyInvalidText: '',
-        isPubKeySuccess: false
+        isPubKeySuccess: false,
+        fetching: false,
+        oneTimeCode: null
     };
     handleStudentNameChange = (event) => {
         this.setState({
@@ -28,75 +30,40 @@ class Request extends Component {
     };
     handleRequestSubmit = (event) => {
         event.preventDefault();
-        axios.post('https://still-badlands-79996.herokuapp.com/request', {
-            studentName: this.state.studentName,
-            studentId: this.state.studentId
+        this.setState({ fetching: true });
+        axios.post('https://tu-issuer.herokuapp.com/recipient', {
+            name: this.state.studentName,
+            id: this.state.studentId
           })
           .then((response) => {
             let res = response.data;
-            if(res === 'success') {
-                this.setState({ 
-                    requestInvalidText: '',
-                    isRequestSuccess: true
-                });
-            } else if(res === 'name1') {
-                this.setState({ requestInvalidText: 'Student name must contain only English characters'});
-            } else if(res === 'id1') {
-                this.setState({ requestInvalidText: 'Student ID must contain only number'});                
-            } else if(res === 'id2') {
-                this.setState({ requestInvalidText: 'Student ID must consisting of 10 digits'});                
+            // return console.log(res + ' ');
+            this.setState({ fetching: false });
+            if (res.status) {
+                console.log(res.oneTimeCode);
+                if(res.status === 'success') {
+                    this.setState({ 
+                        requestInvalidText: '',
+                        oneTimeCode: res.oneTimeCode,
+                        isRequestSuccess: true
+                    });
+                }
+            }else {
+                if(res === 'invalid_name') {
+                    this.setState({ requestInvalidText: 'Student name must contain only English characters'});
+                } else if(res === 'invalid_id') {
+                    this.setState({ requestInvalidText: 'Student ID must contain only number'});                
+                } else if(res === 'id_length') {
+                    this.setState({ requestInvalidText: 'Student ID must consisting of 10 digits'});                
+                }
             }
           })
           .catch((error) => {
             console.log(error);
           });
     };
-    handlePubKeyChange = (event) => {
-        this.setState({
-            pubKey: event.target.value
-        });
-    };
-    handleDiplomaChange = (event) => {
-        this.setState({
-            diploma: event.target.checked
-        });
-    };
-    handleTranscriptChange = (event) => {
-        this.setState({
-            transcript: event.target.checked
-        });
-    };
-    handlePubKeySubmit = (event) => {
-        event.preventDefault();
-        axios.post('https://still-badlands-79996.herokuapp.com/pubKey', {
-            pubKey: this.state.pubKey,
-            diploma: this.state.diploma,
-            transcript: this.state.transcript
-          })
-          .then((response) => {
-            let res = response.data;
-            if(res === 'success') {
-                this.setState({
-                    pubKeyInvalidText: '',
-                    isPubKeySuccess: true
-                });
-                alert('Success');
-                this.props.history.push('/blockchain-project');
-            } else if(res === 'err1') {
-                this.setState({
-                    pubKeyInvalidText: 'Public Key Invalid'
-                });
-            } else if(res === 'err2') {
-                this.setState({
-                    pubKeyInvalidText: 'You have to choose either diploma or transcript'
-                });
-            }
-          })
-          .catch((error) => {
-            console.log(error);
-          });
-    }
     render() {
+        // console.log('OnetimeCode: ', this.state.oneTimeCode);
         return (
             <div>
                 {this.state.isRequestSuccess ?
@@ -109,6 +76,7 @@ class Request extends Component {
                         transcriptChange={this.handleTranscriptChange}
                         submit={this.handlePubKeySubmit}
                         invalidText={this.state.pubKeyInvalidText}
+                        oneTimeCode={this.state.oneTimeCode}
                     />
                     :
                     <RequestForm 
@@ -118,6 +86,7 @@ class Request extends Component {
                         studentIdChange={this.handleStudentIdChange}
                         submit={this.handleRequestSubmit}
                         invalidText={this.state.requestInvalidText}
+                        fetching={this.state.fetching}
                     />
                 }
             </div>
