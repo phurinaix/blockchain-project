@@ -10,7 +10,7 @@ const RequestForm = (props) => {
             <Form onSubmit={props.submit} className="col-md-5" autoComplete="off">
                 { props.invalidText !== '' && <Alert variant="danger">{props.invalidText}</Alert> }
                 { props.fetching && <Spinner animation="border" role="status"><span className="sr-only">Loading...</span></Spinner>}
-                <FormGroup label="Student name" type="text" text="Your student name must contain only letters and must not contain spaces." value={props.studentName} change={props.studentNameChange}/>
+                <FormGroup label="Student name" type="text" text="Your student name must contain only letters and must not contain spaces. (Example: Phurinat Puekkham)" value={props.studentName} change={props.studentNameChange}/>
                 <FormGroup label="Student ID" type="text" text="Your student id number must be 10 characters long, contain only numbers and must not contain spaces." value={props.studentId} change={props.studentIdChange}/>
                 <Button variant="primary" type="submit" className="w-100" disabled={props.fetching}>
                     Send
