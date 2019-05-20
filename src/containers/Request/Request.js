@@ -55,6 +55,8 @@ class Request extends Component {
                     this.setState({ requestInvalidText: 'Student ID must contain only number'});                
                 } else if(res === 'id_length') {
                     this.setState({ requestInvalidText: 'Student ID must consisting of 10 digits'});                
+                } else if(res === 'invalid_name_id') {
+                    this.setState({ requestInvalidText: 'Student name and Student ID are invalid'});
                 }
             }
           })
