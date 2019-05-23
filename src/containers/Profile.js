@@ -32,7 +32,7 @@ class Profile extends Component {
                 <NavigationInside />
                 <div>
                     <h2 className="text-center">Your Profile</h2>
-                    <EmailForm email={this.emailHandle}/>
+                    <EmailForm email={this.emailHandle} buttonText="Update"/>
                 </div>
             </React.Fragment>
         );

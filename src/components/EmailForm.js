@@ -63,9 +63,9 @@ class EmailForm extends Component {
             <Form onSubmit={this.submitHandle} className="col-md-5 mx-auto" autoComplete="off">
                 { this.state.alertMessage !== '' && <Alert variant="danger">{this.state.alertMessage}</Alert> }
                 { this.state.fetching && <Spinner animation="border" role="status"><span className="sr-only">Loading...</span></Spinner>}
-                <FormGroup label="Student Email" type="email" text="" value={this.state.email} change={this.emailChangeHandle}/>
+                <FormGroup label="Student Email" type="email" text="" value={this.state.email} change={this.emailChangeHandle} disabled={this.state.fetching}/>
                 <Button variant="primary" type="submit" className="w-100" disabled={this.state.fetching}>
-                    Submit
+                    {this.props.buttonText}
                 </Button>
             </Form>
         );

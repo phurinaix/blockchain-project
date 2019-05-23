@@ -48,7 +48,7 @@ class Add extends Component {
                         :
                             <div className="text-center">
                                 <h5>You have to provide an email before add issuer</h5>
-                                <EmailForm email={this.isGiveEmailHandle}/>
+                                <EmailForm email={this.isGiveEmailHandle} buttonText="Submit"/>
                             </div>
                         }
                 </div>
