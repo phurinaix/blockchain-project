@@ -15,8 +15,7 @@ const Navigation = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ml-auto text-center link">
                         <LinkContainer to="/blockchain-project"><Nav.Link>HOME</Nav.Link></LinkContainer>
-                        <LinkContainer to="/blockchain-project/request"><Nav.Link>REQUEST</Nav.Link></LinkContainer>
-                        <LinkContainer to="#"><Nav.Link>VERIFY</Nav.Link></LinkContainer>
+                        <LinkContainer to="/blockchain-project/about"><Nav.Link>ABOUT</Nav.Link></LinkContainer>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
