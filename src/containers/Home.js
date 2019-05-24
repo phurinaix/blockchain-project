@@ -29,10 +29,8 @@ class Home extends Component {
           })
           .then((response) => {
             let res = response.data;
-            // return console.log(res + ' ');
             this.setState({ fetching: false });
             if (res.key0) {
-                console.log(res.key0);
                 if(res.status === 'success') {
                     this.setState({ 
                         requestInvalidText: '',

@@ -16,6 +16,7 @@ class NavigationInside extends Component {
                         <Nav className="ml-auto text-center link">
                             <LinkContainer to="/blockchain-project/add"><Nav.Link>ADD ISSUER</Nav.Link></LinkContainer>
                             <LinkContainer to="/blockchain-project/request"><Nav.Link>REQUEST</Nav.Link></LinkContainer>
+                            <LinkContainer to="/blockchain-project/request_list"><Nav.Link>REQUEST LIST</Nav.Link></LinkContainer>
                             <NavDropdown title="PROFILE" id="collasible-nav-dropdown">
                                 <LinkContainer to="/blockchain-project/profile"><NavDropdown.Item href="#action/3.3">Your Profile</NavDropdown.Item></LinkContainer>
                                 <NavDropdown.Divider />

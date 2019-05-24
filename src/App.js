@@ -3,6 +3,7 @@ import './App.css';
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Home from './containers/Home';
 import Request from './containers/Request';
+import RequestList from './containers/RequestList';
 import Add from './containers/Add';
 import About from './containers/About';
 import Error from './containers/Error';
@@ -21,6 +22,7 @@ function App() {
           <Route path="/blockchain-project/request" component={Request}/>
           <Route path="/blockchain-project/about" component={About} />
           <Route path="/blockchain-project/profile" component={Profile} />
+          <Route path="/blockchain-project/request_list" component={RequestList} />
           <Route path="/blockchain-project/logout" component={Logout} />
           <Route component={Error}/>
         </Switch>
