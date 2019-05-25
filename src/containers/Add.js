@@ -32,6 +32,11 @@ class Add extends Component {
                                     isGiveEmail: true,
                                     fetching: false
                                 });
+                            } else {
+                                this.setState({ 
+                                    isGiveEmail: false,
+                                    fetching: false
+                                });
                             }
                         })
                         .catch(err => {
