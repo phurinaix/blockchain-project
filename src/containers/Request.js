@@ -58,6 +58,11 @@ class Request extends Component {
                             alertMessage: 'Yout already requested transcript',
                             fetching: false
                         })
+                    } else if (res === 'already_both') {
+                        this.setState({
+                            alertMessage: 'Yout already requested both diploma and transcript',
+                            fetching: false
+                        })
                     }
                 })
                 .catch(err => {
