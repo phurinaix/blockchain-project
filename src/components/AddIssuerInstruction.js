@@ -2,7 +2,21 @@ import React from 'react';
 import blockcerts_issuers from '../assets/img/blockcerts_issuers.jpg';
 import blockcerts_add_issuer from '../assets/img/blockcerts_add_issuer.jpg';
 
+const encryptNumber = (number) => {
+    var strArr = ['A', 'B', 'C', 'x', 'y', 'z', 'k', 'M', 'N', 'R'];
+    if (typeof number === "number") {
+        number = number + '';
+    }
+    var numberArr = number.split('');
+    var encryptMsg = numberArr.map(n => {
+        return strArr[n];
+    });
+
+    return encryptMsg.join('');
+};
+
 const AddIssuerInstruction = (props) => {
+    const identity = localStorage.getItem("identity");
     return (
         <div className="col-md-7 mx-auto text-center">
             <h6>Please first download the Blockcerts wallet from the link</h6>
@@ -13,7 +27,7 @@ const AddIssuerInstruction = (props) => {
             <h6>Once you have your Blockcerts wallet on your phone, Go to add issuer</h6>
             <div className="bg-light py-4 px-3 m-4">
                 <p>Enter the URL: <strong>https://tu-issuer.herokuapp.com/issuer-profile</strong></p>
-                <p>Enter the one-time-code: <strong>Your Student ID</strong></p>
+                <p>Enter the one-time-code: <strong>{encryptNumber(identity)}</strong></p>
             </div>
             <h6>After that you can see issuer in your issuer screen</h6>
             <br/>
