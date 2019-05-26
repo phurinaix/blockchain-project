@@ -48,13 +48,17 @@ class Request extends Component {
                             alertMessage: 'invalid diploma and transcript type',
                             fetching: false
                         });
-                    } else if (res === 'limit') {
+                    } else if (res === 'already_diploma') {
                         this.setState({
-                            alertMessage: 'Your request limit',
+                            alertMessage: 'Yout already requested diploma',
+                            fetching: false
+                        })
+                    } else if (res === 'already_transcript') {
+                        this.setState({
+                            alertMessage: 'Yout already requested transcript',
                             fetching: false
                         })
                     }
-                    
                 })
                 .catch(err => {
                     console.log(err);

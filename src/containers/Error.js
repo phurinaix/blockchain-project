@@ -1,10 +1,12 @@
 import React from 'react';
+import Navigation from '../components/Navigation';
 
 const Error = () => {
     return (
-        <div>
+        <React.Fragment>
+            <Navigation />
             <h1>Path doesn't exist !!</h1>
-        </div>
+        </React.Fragment>
     );
 }
 

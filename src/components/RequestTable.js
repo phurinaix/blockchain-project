@@ -43,8 +43,7 @@ class RequestTable extends Component {
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Diploma</th>
-                            <th>Transcript</th>
+                            <th>Credential Type</th>
                             <th>Requested Time</th>
                             <th>Delete</th>
                         </tr>
@@ -54,8 +53,7 @@ class RequestTable extends Component {
                             return (
                                 <tr key={index}>
                                     <td>{++index}</td>
-                                    <td>{c.diploma}</td>
-                                    <td>{c.transcript}</td>
+                                    <td>{c.credential_type}</td>
                                     <td>{c.created_time}</td>
                                     <td><Button variant="danger" onClick={() => this.deleteHandler(c.id)}>Delete</Button></td>
                                 </tr>
